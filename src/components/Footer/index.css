@@ -1,0 +1,83 @@
+/* index.css */
+
+.footer {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  padding: 2rem 1rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-section {
+  flex: 1;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 0.95rem;
+  color: #cccccc;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer-section a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
+
+/* Medium Devices (≥ 600px) */
+@media (min-width: 600px) {
+  .footer-container {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+
+  .footer-section {
+    max-width: 300px;
+  }
+}
+
+/* Large Devices (≥ 992px) */
+@media (min-width: 992px) {
+  .footer {
+    padding: 3rem 2rem 2rem;
+  }
+
+  .footer-section h4 {
+    font-size: 1.4rem;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 1rem;
+  }
+}

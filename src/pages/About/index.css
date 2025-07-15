@@ -1,0 +1,80 @@
+/* About Page Container */
+.about-wrapper {
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* Title */
+.about-wrapper h2 {
+  text-align: center;
+  margin: 2rem 1rem 1rem;
+  font-size: 2rem;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card Content */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 1.25rem;
+  margin: 1rem auto;
+  max-width: 900px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #444;
+  transition: all 0.3s ease;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #007bff;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .about-wrapper h2 {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    margin: 1rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .card {
+    padding: 2rem;
+  }
+
+  .card h3 {
+    font-size: 1.75rem;
+  }
+
+  .card p {
+    font-size: 1.1rem;
+  }
+
+  .about-wrapper h2 {
+    font-size: 2.5rem;
+  }
+}

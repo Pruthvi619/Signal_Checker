@@ -1,0 +1,87 @@
+/* Header.css */
+
+.site-header {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+}
+
+/* Top bar */
+.top-bar {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.top-bar a {
+  color: #f1f1f1;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}
+
+/* Brand & tagline */
+.brand-tagline {
+  text-align: center;
+  padding: 1rem 1rem 0.5rem;
+  background-color: #ffffff;
+}
+
+.brand-tagline h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+
+.brand-tagline p {
+  font-size: 1rem;
+  color: #777;
+  margin: 0;
+}
+
+/* Adjustments for tablets */
+@media (min-width: 768px) {
+  .top-bar {
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+  }
+
+  .brand-tagline {
+    padding: 1.5rem 2rem 1rem;
+  }
+
+  .brand-tagline h1 {
+    font-size: 2.2rem;
+  }
+
+  .brand-tagline p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 992px) {
+  .top-bar {
+    justify-content: flex-end;
+  }
+
+  .top-bar span {
+    margin-right: auto;
+  }
+
+  .brand-tagline h1 {
+    font-size: 2.6rem;
+  }
+
+  .brand-tagline p {
+    font-size: 1.2rem;
+  }
+}
