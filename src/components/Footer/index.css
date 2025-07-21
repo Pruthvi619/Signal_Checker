@@ -3,7 +3,7 @@
 .footer {
   background-color: #1a1a1a;
   color: #f1f1f1;
-  padding: 2rem 1rem 1rem;
+  padding: 3rem 1rem 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   box-sizing: border-box;
@@ -12,27 +12,34 @@
 .footer-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
 .footer-section {
   flex: 1;
+  min-width: 200px;
 }
 
 .footer-section h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
 
 .footer-section p,
 .footer-section a {
   font-size: 0.95rem;
-  color: #cccccc;
+  color: #e0e0e0;
   text-decoration: none;
   line-height: 1.6;
+  transition: color 0.3s ease;
+  display: block;
+  margin: 0.2rem 0;
 }
 
 .footer-section a:hover {
@@ -42,34 +49,45 @@
 
 .footer-bottom {
   text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid #333;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 0.9rem;
-  color: #aaaaaa;
+  color: #d0d0d0;
+}
+
+/* Icons (optional) */
+.footer-section a::before {
+  content: '›';
+  margin-right: 8px;
+  color: #cccccc;
 }
 
 /* Medium Devices (≥ 600px) */
 @media (min-width: 600px) {
   .footer-container {
     flex-direction: row;
+    align-items: flex-start;
     text-align: left;
-    justify-content: space-between;
     padding: 0 2rem;
   }
 
   .footer-section {
     max-width: 300px;
   }
+
+  .footer-section a::before {
+    margin-right: 6px;
+  }
 }
 
 /* Large Devices (≥ 992px) */
 @media (min-width: 992px) {
   .footer {
-    padding: 3rem 2rem 2rem;
+    padding: 4rem 2rem 2rem;
   }
 
   .footer-section h4 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .footer-section p,

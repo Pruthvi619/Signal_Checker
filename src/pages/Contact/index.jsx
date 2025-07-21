@@ -46,7 +46,7 @@ const Contact = () => {
             <h3>Other Ways to Reach Us</h3>
             <p>You can also reach out via email or our dedicated collaboration portal.</p>
             <p><strong>📧 Email:</strong> <a href="mailto:contact@signalchecker.com">contact@signalchecker.com</a></p>
-            <p><strong>🔗 Link:</strong> <a href="#">Collaboration Portal</a></p>
+            <p><strong>🔗 Link:</strong> <a href="https://streetwave.co/">Collaboration Portal</a></p>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../../assets/logo.png';
+
 import './index.css';
 
 const Navbar = () => {
@@ -12,7 +14,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <NavLink to="/" className="navbar-logo" onClick={closeMenu}>
-          📶 SignalChecker
+          <img src={logo} alt="Logo" className="navbar-logo-image" />
         </NavLink>
 
         {/* Hamburger icon */}
@@ -22,9 +24,9 @@ const Navbar = () => {
 
         <div className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
           <NavLink to="/" className="navbar-item" onClick={closeMenu}>Home</NavLink>
-          <NavLink to="/about" className="navbar-item" onClick={closeMenu}>About</NavLink>
           <NavLink to="/check-signal" className="navbar-item" onClick={closeMenu}>Check Signal</NavLink>
           <NavLink to="/compare-providers" className="navbar-item" onClick={closeMenu}>Compare</NavLink>
+          <NavLink to="/about" className="navbar-item" onClick={closeMenu}>About</NavLink>
           <NavLink to="/contact" className="navbar-item" onClick={closeMenu}>Contact</NavLink>
         </div>
       </div>

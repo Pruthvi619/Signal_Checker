@@ -33,6 +33,14 @@
   cursor: pointer;
   display: block;
 }
+.navbar-logo-image {
+  height: 48px;           /* Adjust as needed */
+  width: auto;            /* Keeps aspect ratio */
+  object-fit: contain;      /* Ensures the image covers the area */ 
+  display: block;         /* Removes inline spacing */
+  padding: 4px;           /* Optional: some spacing around image */
+}
+
 
 .navbar-menu {
   display: none;

@@ -1,0 +1,116 @@
+/* CheckSignalStrength.css */
+
+.check-signal-wrapper {
+  padding: 2rem;
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+  min-height: 100vh;
+  background-image: url('../../assets/banner.png');
+  background-position: center;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.check-signal-wrapper h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Flex layout for form + map */
+.signal-columns {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Form section */
+.signal-form {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+.signal-map {
+  flex: 2 1 500px;
+  min-width: 350px;
+}
+
+/* Card styles (Bulma override / enhancement) */
+.card {
+  color: #333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  background-color: #00bcd4;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Form elements */
+.field {
+  margin-bottom: 1.25rem;
+}
+
+.input, .select select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.button {
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button.is-primary {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.button.is-info {
+  background-color: #00bcd4;
+  color: white;
+}
+
+/* Map styling */
+.leaflet-container {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .signal-columns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .check-signal-wrapper {
+    padding: 1rem;
+  }
+
+  .signal-form, .signal-map {
+    width: 100%;
+    max-width: 100%;
+  }
+}

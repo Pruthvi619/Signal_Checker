@@ -1,5 +1,7 @@
 /* Import a nice font (optional) */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import "leaflet/dist/leaflet.css";
+
 
 /* Basic Reset and Global Styles */
 * {
@@ -11,8 +13,10 @@
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+  background-image: url('../src/assets/bg1.png');
+  background-size: cover;
+  background-position: center;
+  color: #302f2f;
 }
 
 /* App Layout */
