@@ -8,13 +8,17 @@
   background-position: center;
   background-size: cover;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Headings */
 .check-signal-wrapper h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: center;
+  color: #fff;
 }
 
 /* Flex layout for form + map */
@@ -23,6 +27,7 @@
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  flex: 1;
 }
 
 /* Form section */
@@ -31,12 +36,13 @@
   max-width: 500px;
 }
 
+/* Map section */
 .signal-map {
   flex: 2 1 500px;
   min-width: 350px;
 }
 
-/* Card styles (Bulma override / enhancement) */
+/* Card styles */
 .card {
   color: #333;
   border-radius: 12px;
@@ -61,7 +67,8 @@
   margin-bottom: 1.25rem;
 }
 
-.input, .select select {
+.input, 
+.select select {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
@@ -80,6 +87,11 @@
   font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.9;
 }
 
 .button.is-primary {
@@ -96,9 +108,19 @@
 .leaflet-container {
   border-radius: 8px;
   border: 1px solid #ddd;
+  min-height: 400px;
 }
 
-/* Responsive tweaks */
+/* Responsive breakpoints */
+@media screen and (max-width: 1024px) {
+  .check-signal-wrapper h2 {
+    font-size: 1.8rem;
+  }
+  .signal-columns {
+    gap: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .signal-columns {
     flex-direction: column;
@@ -109,8 +131,31 @@
     padding: 1rem;
   }
 
-  .signal-form, .signal-map {
+  .signal-form, 
+  .signal-map {
     width: 100%;
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .check-signal-wrapper h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .input, 
+  .select select, 
+  .button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .leaflet-container {
+    min-height: 300px;
   }
 }
