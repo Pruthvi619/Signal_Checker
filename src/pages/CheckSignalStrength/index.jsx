@@ -134,9 +134,8 @@ const SignalForm = ({ onSubmit }) => {
             >
               <option value="">Select operator...</option>
               <option value="EE">EE</option>
-              <option value="Vodafone">Vodafone</option>
               <option value="O2">O2</option>
-              <option value="Three">Three</option>
+              <option value="Three/Vodafone">Three/Vodafone</option>
             </select>
           </div>
         </div>
@@ -189,6 +188,11 @@ const SignalMap = ({ formData }) => {
       )}
 
       <div style={{ height: "400px", marginTop: "1rem" }}>
+
+      <div id="signal-data" style={{ marginBottom: '10px', padding: '0.5rem', background: '#f4f4f4', borderRadius: '4px' }}>
+        Click on a hex to see signal details.
+      </div>
+
         <MapContainer
           key={JSON.stringify(formData.coords)} // force reload on new location
           center={formData.coords}
@@ -206,32 +210,52 @@ const SignalMap = ({ formData }) => {
 
           {formData.hexData?.features && (
             <>
-              <GeoJSON
-                data={formData.hexData}
-                style={(feature) => {
-                  const value = feature.properties.value;
-                  let color;
-                  if (value <= 35) {
-                    color = '#f58383ff';
-                  } else if (value <= 70) {
-                    color = '#e7db94ff';
-                  } else {
-                    color = '#7fde7fff';
-                  }
-                  return {
-                    color: feature.properties.isNearest ? '#000000' : color,
-                    weight: 1,
-                    fillColor: color,
-                    fillOpacity: 0.5
-                  };
-                }}
-              />
+      <GeoJSON
+        data={formData.hexData}
+        style={(feature) => {
+          const value = feature.properties.value;
+          let color;
+          if (value <= -110) {
+            color = '#f58383ff';
+          } else if (value <= -60) {
+            color = '#e7db94ff';
+          } else {
+            color = '#7fde7fff';
+          }
+          return {
+            color: feature.properties.isNearest ? '#000000' : color,
+            weight: 1,
+            fillColor: color,
+            fillOpacity: 0.5
+          };
+        }}
+        onEachFeature={(feature, layer) => {
+          layer.on('click', () => {
+            const dataDiv = document.getElementById('signal-data');
+            if (dataDiv) {
+              console.log("Feature formData.operator:", formData.operator);
+              
+              const rsrpValue = feature.properties.value.toFixed(2);
+              const centerLat = feature.properties.center[1].toFixed(5);
+              const centerLon = feature.properties.center[0].toFixed(5);
+
+              dataDiv.innerHTML = `
+                <b>Signal Data:</b><br>
+                RSRP: ${rsrpValue} dBm<br>
+                Center: ${centerLat}, ${centerLon}
+              `;
+            }
+          });
+        }}
+      />
+
               <FitBounds geojson={formData.hexData} />
             </>
           )}
         </MapContainer>
       </div>
 
+          
       {formData.hexData?.nearest && (
         <div style={{ marginTop: '1rem' }}>
           <p><strong>Nearest Hex Center:</strong> {formData.hexData.nearest.center[1].toFixed(5)}, {formData.hexData.nearest.center[0].toFixed(5)}</p>
@@ -270,7 +294,7 @@ const CheckSignalStrength = () => {
       const [user_lat, user_lon] = coords;
 
       try {
-        const response = await fetch("https://5gbackend-production.up.railway.app/api/generate-hexgrid", {
+        const response = await fetch("http://localhost:5000/api/generate-hexgrid", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
