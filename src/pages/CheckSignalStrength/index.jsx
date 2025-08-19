@@ -294,7 +294,7 @@ const CheckSignalStrength = () => {
       const [user_lat, user_lon] = coords;
 
       try {
-        const response = await fetch("http://localhost:5000/api/generate-hexgrid", {
+        const response = await fetch("https://5gbackend-production.up.railway.app/api/generate-hexgrid", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
